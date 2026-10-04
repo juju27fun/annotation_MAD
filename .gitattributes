@@ -1,0 +1,4 @@
+# Keep hashed files byte-identical on every operating system.
+* text eol=lf
+*.gz binary
+*.png binary

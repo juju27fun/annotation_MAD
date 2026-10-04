@@ -1,0 +1,13 @@
+{
+  "name": "mad-independent-review",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.8.0",
+  "scripts": {
+    "test": "node tests/review-contract.mjs && node tests/interaction-contract.mjs && node tests/ergonomics.mjs && node tests/full-flow.mjs && node tests/clone-startup.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

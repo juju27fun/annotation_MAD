@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "release_id": "review-v1.2.0",
+  "scope": "exhaustive independent interval annotation of the historical audit cohort",
+  "participants": [
+    "lubin-gauthier",
+    "sebastian-sierra-alarcon"
+  ],
+  "independence": "Reviewers annotate separately, with no original-author labels, confidence values or detector proposals in this repository. Prior familiarity with the data is acknowledged.",
+  "instructions_file": "docs/CONSIGNES.md",
+  "practice": "Separate synthetic traces for tool familiarization; never included in the evaluation export.",
+  "reference_policy": "Preserve each reviewer export separately; no automatic adjudication or merging.",
+  "data_scope": "Audit cohort only; no new tuning set is included.",
+  "analysis_status": "This fixes collection and visualization, not comparator tuning or agreement-analysis settings. No detector run is authorized by this package.",
+  "versioning": "Any change to instructions, display, event semantics or defaults requires a new release and an explicit decision about repeating affected reviews.",
+  "delivery": "Private repository, named collaborators only. Return final JSON directly to the coordinator; never commit or attach annotations to a shared issue or pull request.",
+  "frozen_at_utc": "2026-10-04T15:07:53.892014+00:00",
+  "identity": "Automatic anonymous local session; associate a named reviewer only upon receipt.",
+  "input_gestures": "Two boundary clicks in either order, or a drag, on raw overview or filtered signal. Integer coordinates on original signal. Event save and trace completion have separate buttons."
+}

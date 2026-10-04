@@ -1,0 +1,27 @@
+{
+  "release_id": "review-v1.2.0",
+  "interface_version": "1.2.0",
+  "manifest_sha256": "d9c52aa8f787e9f16f01462ebbd8a9ab7ad875388bc8fbd14d41f153b2b91dcf",
+  "contract_sha256": "ba3d7ef7524c5b4dece2c661e227a7c57752abea5bedbd14f323738025a647c4",
+  "protocol_sha256": "2b5af4093481c35cf5057c8431165f06709405859c0e704bf2961bcb4b0bf72e",
+  "source_hashes": {
+    "docs/CONSIGNES.html": "3ad3c05d903d77fa1cc970c988491ce40221b7356cbd77b28d09bbff08204a8d",
+    "MANIFEST.json": "dafb29cccc5f56ee711be8491a777ce7b8b10d4239d87aed01605934788ee940",
+    "CONTRACT.json": "ad87bb845cc9d7a94cb5e39135718c97ed07c57d4d5c8045e5af816d8eea7e39",
+    "COLLECTION_PROTOCOL.json": "70b92f06fb7cbf7eadc075f3b5530cabce1ccfae3f87626352f2375788531ddf",
+    "REVIEWERS.json": "d39138af3b3ab0bd64b8167ee1321984e1dea5d6a80bb3859f5968e9755f80e3",
+    "docs/CONSIGNES.md": "41266c136b8627360b38adf4fba2b3d4681f9cf834ac8b75a4fc8d6fd3d8e713",
+    "docs/exemple-synthetique.png": "6bcb06e0aa4cb50565a6b94ac801026966201338e5f8f1ee44f506f548d571d9",
+    "app/app.js": "f9379e5881aa4a921e544befe92010f8e241795ce257176409ce26eead09d6e9",
+    "app/style.css": "350698ea857f2a1df43764555d5624b7b0f98814499093e99990b2b18ba25797",
+    "app/index.html": "c620940b47eb8985a1c814f74ee24406bd29d42cd3d9183e6eacfcf706589f9b",
+    "app/offline.js": "9bcc8f6ff13366149ea59df6278d85f4cc8f29dc69fb7ecc2e1c84cf365ec39d",
+    "app/campaign.js": "3e9189fc552ef54a4c6be29a4483e33783ea2ee8b8e019881db5c40674d17626",
+    "app/ergonomics.js": "e90786db3b8157f3d6009ac96eef39e55f7669afd4f4cc3f585912e1c246757d",
+    "app/gestures.js": "56552db2df8b46ddb46fca90f7449bc9cbceb6b0c89d0942c2b99628b1dad644",
+    "data/review.json.gz": "ad1a5fa06d9a65867cdee906895e3f6d2fbbb2c418fdfd4bcc04ceb14f8f7370",
+    "data/practice.json.gz": "6e34932b2720aaef460de5758d742393ff49329e1cd7ac953e9acd32b75cf7dd",
+    "scripts/build.py": "75dbd55f5619baf4d5c63036ea498553fda1b004ed331bc24910ee207b9e1402"
+  },
+  "release_sha256": "5406b01b2f52096f6c6b457ee1a72caf6277832cdc4fe24426231c989b6cf7ad"
+}
