@@ -2,3 +2,9 @@
 * text eol=lf
 *.gz binary
 *.png binary
+
+# Keep generated standalone bundles out of source diffs and language statistics.
+/index.html linguist-generated=true
+/Revue.html linguist-generated=true
+/Essai.html linguist-generated=true
+/docs/CONSIGNES.html linguist-generated=true

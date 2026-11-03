@@ -11,3 +11,10 @@ annotations*.json
 private/
 .pacquet-*
 .pnpm-store/
+
+# Configuration locale des assistants
+AGENTS.md
+CLAUDE.md
+.agents/
+.claude/
+.codex/

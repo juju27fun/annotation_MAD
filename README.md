@@ -1,87 +1,42 @@
-# Annotation indépendante — deux clics par événement
+# Annotation des événements
 
-Mini-projet local pour Lubin Gauthier et Sebastian Sierra Alarcon. Chacun annote
-indépendamment les mêmes traces, sans propositions ni annotations d'un autre relecteur.
-Les effectifs sont consignés dans paper/claims.toml et MANIFEST.json.
+Pour Lubin Gauthier et Sebastian Sierra Alarcon : chacun annote les mêmes traces
+indépendamment. L’outil fonctionne dans le navigateur, hors ligne, sans installation.
 
-## Commencer
+## 1. Ouvrir l’outil
 
-Clone le dépôt privé, puis ouvre **Revue.html** dans un navigateur récent :
+1. En haut de cette page GitHub, clique sur **Code → Download ZIP**.
+2. Décompresse le dossier téléchargé.
+3. Double-clique sur **Revue.html** pour l’ouvrir dans un navigateur récent.
 
-```sh
-git clone git@github.com:juju27fun/annotation_MAD.git
-cd annotation_MAD
-```
+La revue démarre directement, sans compte ni nom à saisir. Tu peux d’abord tester
+les gestes avec **Essai synthétique**, puis lire les [consignes illustrées](docs/CONSIGNES.md).
+Ces deux liens sont aussi accessibles dans l’outil.
 
-Double-clique sur **Revue.html** dans le dossier cloné. Sur macOS, la commande
-`open Revue.html` fait la même chose. Sous Windows ou Linux, ouvre ce fichier
-dans ton navigateur. Le téléchargement GitHub « Code → Download ZIP », suivi
-d’une décompression, fonctionne également.
+## 2. Annoter
 
-Les traces et tous les composants sont inclus : aucune installation de Python,
-Node, serveur ou dépendance n’est nécessaire pour annoter. Après récupération
-du dossier, l’outil fonctionne hors ligne. **index.html** est une copie identique ;
-garde ensuite le même fichier d’entrée pour retrouver ta sauvegarde locale.
-La première trace est immédiatement annotable : aucun nom à choisir ou à saisir.
-Les liens **Essai synthétique** et **Consignes** restent disponibles en haut.
+- Clique sur le début et la fin d’un passage, dans l’ordre de ton choix. Un glisser fonctionne aussi.
+- Vérifie les choix **Présence certaine** et **Bornes nettes** ; modifie-les si nécessaire.
+- Clique sur **Valider cet événement**. Tu restes sur la même trace pour ajouter d’autres passages.
+- Quand la trace est terminée, clique sur **Terminer la trace et continuer** ou appuie sur **Entrée**.
+- S’il n’y a aucun passage, utilise **Aucun événement** (**0**). En cas de doute, utilise **Trace incertaine** (**I**).
 
-Clique sur les deux bornes du passage, **fin puis début ou début puis fin**, sur le
-petit signal du haut ou le grand signal filtré. Un glisser fonctionne aussi. À droite, les grands boutons **Présence certaine**
-et **Bornes nettes** sont déjà sélectionnés. Modifie uniquement les exceptions ; les
-choix incertains apparaissent en orange. Les champs de censure, difficulté, commentaire
-et les bornes numériques se trouvent dans **Autres détails et bornes précises**.
-**Valider cet événement** enregistre le passage et reste sur la même trace.
-**Ajouter un événement** prépare le suivant ; deux nouveaux clics suffisent aussi.
-**Terminer la trace et continuer** (Entrée) valide tous les passages et avance. **0** confirme une trace sans passage ; **I**
-signale une trace incertaine. **A** ajuste les intervalles ; **D** dessine ; **Z** zoome.
+Annote ce que tu observes, sans consulter les réponses de l’autre relecteur.
 
-## Sauvegarder et envoyer
+## 3. Sauvegarder et envoyer
 
-La sauvegarde dans le navigateur est automatique. Garde le même fichier, le même
-emplacement et le même navigateur pour reprendre. **Reprendre** importe une sauvegarde
-JSON compatible dans une session vide ; aucune réponse différente n'est écrasée.
+La progression est sauvegardée automatiquement dans le navigateur. Pour reprendre,
+garde **le même navigateur, le même dossier et le même fichier Revue.html**.
 
-**Exporter le JSON** produit une sauvegarde partielle ou, si toutes les traces sont
-validées, un export complet avec reçu. Envoie ce fichier directement au coordinateur,
-qui l'associera à ton nom. Aucun nom n'est demandé dans l'outil. La copie locale reste
-modifiable ; après une correction, exporte un nouveau fichier et conserve le précédent.
+Utilise régulièrement **Exporter le JSON** pour conserver une copie de ta progression.
+**Reprendre** permet de réimporter un JSON compatible dans une session vide.
 
-Ne commite pas les réponses et ne les joins pas à une issue ou une pull request du
-dépôt partagé. Aucune donnée n'est transmise automatiquement à GitHub.
+Une fois toutes les traces validées, exporte le JSON et envoie-le directement à Julien.
+Après une correction, exporte un nouveau fichier et conserve le précédent.
+Ne dépose pas les réponses sur ce dépôt partagé. Aucun envoi n’est automatique.
 
-## Fichiers et vérifications
+---
 
-index.html et Revue.html sont la même application autonome. Essai.html contient les
-exercices synthétiques. docs/CONSIGNES.html contient le guide illustré. Les fichiers
-MANIFEST.json, CONTRACT.json, COLLECTION_PROTOCOL.json et RELEASE.json identifient
-les données, les règles de collecte et la version. Les sources sont dans app/ et data/.
-
-Les commandes suivantes sont destinées au développement, pas aux relecteurs :
-
-```sh
-uv sync --locked
-pnpm install --frozen-lockfile --offline
-uv run --locked python scripts/build.py
-uv run --locked pnpm test
-uv run --locked python scripts/check_package.py
-uv run --locked python scripts/validate_review_export.py /chemin/export.json --bundle . --complete
-```
-
-Les versions de runtime sont dans mise.toml ; aucune bibliothèque applicative tierce
-n'est requise. Consulter MAINTAINER.md pour la livraison privée. La version livrée conserve les données et l’interface approuvées. Les sauvegardes
-navigateur existantes ne sont jamais effacées.
-
-Pour reproduire le contrôle depuis un nouveau clone (développement uniquement) :
-
-```sh
-uv run --locked python scripts/test_clone.py
-```
-
-Ce test clone le commit courant dans un dossier temporaire, vérifie les données,
-exécute les parcours d’annotation et d’export avec un DOM simulé, contrôle une
-reconstruction identique, puis supprime son clone temporaire. Il ne remplace pas
-l’essai visuel dans le navigateur. Pour contrôler la version envoyée sur GitHub :
-
-```sh
-uv run --locked python scripts/test_clone.py --remote git@github.com:juju27fun/annotation_MAD.git
-```
+Les fichiers **Revue.html**, **Essai.html** et les consignes suffisent pour annoter.
+Le reste du dépôt sert à conserver les sources et à vérifier la version distribuée.
+Les informations techniques sont regroupées dans la [documentation de maintenance](docs/MAINTENANCE.md).
